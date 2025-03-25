@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.5s ease;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background: #0ba9cd;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<button id="colorBtn">Change Background Color</button>
+
+<script>
+    const colors = ['#FF5733', '#33FF57', '#337BFF', '#F3FF33', '#FF33A8', '#A833FF'];
+    
+    let index = 0;
+    let forward = true; 
+
+    const button = document.getElementById('colorBtn');
+    button.addEventListener('click',()=>{
+    document.body.style.backgroundColor = colors[index];
+ if(forward){
+    index++; 
+    if(index >=colors.length-1){
+        forward=false;
+    }
+    }else{
+        index--;
+        if (index<=0) {
+            forward=true;
+        }
+    }
+    });
+   
+</script>
+
+</body>
+</html>

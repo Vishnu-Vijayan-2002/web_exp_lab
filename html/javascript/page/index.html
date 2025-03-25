@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Text Change on Mouseover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f4f4;
+            transition: background 0.5s ease;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background: white;
+            transition: transform 0.3s;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        h2, p {
+            margin: 15px 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="contentBox">
+    <h2 id="title">Hover over this area</h2>
+    <p id="description">You will see a new image and text when you hover.</p>
+    <img id="image" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="Default Image">
+</div>
+
+<script>
+    const contentBox = document.getElementById('contentBox');
+    const title = document.getElementById('title');
+    const description = document.getElementById('description');
+    const image = document.getElementById('image');
+
+    // Event: Mouse over 
+    contentBox.addEventListener('mouseover', () => {
+        title.textContent = 'New Content Displayed!';
+        description.textContent = 'You are now viewing the alternate content.';
+        image.src = 'https://st.depositphotos.com/1022150/3248/i/450/depositphotos_32482857-stock-photo-dry-tree-and-crows-on.jpg';  // New image URL
+    });
+
+    // Event: Mouse out 
+    contentBox.addEventListener('mouseout', () => {
+        title.textContent = 'Hover over this area';
+        description.textContent = 'You will see a new image and text when you hover.';
+        image.src = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg'; 
+    });
+</script>
+
+</body>
+</html>
