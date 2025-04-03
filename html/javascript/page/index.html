@@ -41,7 +41,7 @@
 
 <div class="container" id="contentBox">
     <h2 id="title">Hover over this area</h2>
-    <p id="description">You will see a new image and text when you hover.</p>
+    <p id="description">Content 1</p>
     <img id="image" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="Default Image">
 </div>
 
@@ -54,15 +54,18 @@
     // Event: Mouse over 
     contentBox.addEventListener('mouseover', () => {
         title.textContent = 'New Content Displayed!';
-        description.textContent = 'You are now viewing the alternate content.';
+        description.textContent = 'Content 2';
+        description.style.color="blue"
         image.src = 'https://st.depositphotos.com/1022150/3248/i/450/depositphotos_32482857-stock-photo-dry-tree-and-crows-on.jpg';  // New image URL
     });
 
     // Event: Mouse out 
     contentBox.addEventListener('mouseout', () => {
         title.textContent = 'Hover over this area';
-        description.textContent = 'You will see a new image and text when you hover.';
+        description.textContent = 'Content 1';
+        description.style.color="red"
         image.src = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg'; 
+
     });
 </script>
 
